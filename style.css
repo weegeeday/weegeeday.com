@@ -1,0 +1,110 @@
+body {
+    background-color: #000;
+    color: #ffffff;
+    overflow: hidden;
+    margin: 0;
+}
+
+.shader-text {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 80px;
+    font-weight: bold;
+
+    -webkit-text-stroke: 2px #242323;
+    
+    /* moving rainbow shader + pixelated */
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: none;
+    font-smooth: never;
+
+    /* Keep the full rainbow, but quantize it into obvious pixel-sized blocks. */
+    background: repeating-linear-gradient(
+      to right,
+      oklch(0.6 0.25 0) 0 12px,
+      oklch(0.6 0.25 30) 12px 24px,
+      oklch(0.6 0.25 60) 24px 36px,
+      oklch(0.6 0.25 90) 36px 48px,
+      oklch(0.6 0.25 120) 48px 60px,
+      oklch(0.6 0.25 150) 60px 72px,
+      oklch(0.6 0.25 180) 72px 84px,
+      oklch(0.6 0.25 210) 84px 96px,
+      oklch(0.6 0.25 240) 96px 108px,
+      oklch(0.6 0.25 270) 108px 120px,
+      oklch(0.6 0.25 300) 120px 132px,
+      oklch(0.6 0.25 330) 132px 144px
+    );
+    background-size: 144px 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: move-gradient 2s linear infinite;
+
+}
+
+@keyframes move-gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  100% {
+    background-position: -144px 50%;
+  }
+}
+.button-container {
+  position: relative; 
+  display: inline-block; /* Shrinks container to fit the content tightly */
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+.transparent-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Make it completely invisible */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  
+  /* Ensure it sits on top of the text */
+  z-index: 1; 
+}
+
+
+/* star stuff */
+.space-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: fly 40s linear infinite; 
+}
+
+.space-bg, .space-bg::after {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+}
+
+
+.space-bg::after {
+  content: "";
+  top: 2000px;
+  box-shadow: inherit; 
+}
+
+@keyframes fly {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px); 
+  }
+}
