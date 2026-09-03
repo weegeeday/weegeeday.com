@@ -1,25 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Weegeeday</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="music/scriptracker-1.1.1.min.js"></script>
-    <script type="text/javascript" src="main.js" defer> </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script
+      type="text/javascript"
+      src="music/scriptracker-1.1.1.min.js"
+    ></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-<div class="space-wrap">
-  <div class="space-bg" id="starfield"></div>
-</div>
+  <body>
+    <div class="space-wrap">
+      <div class="space-bg" id="starfield"></div>
+    </div>
 
+    <div class="model-container" id="model-container" style="display: none">
+      <!-- 3D model will be rendered here -->
+    </div>
 
-<!-- add a center div to have text with a css shader -->
-<div class="shader-text">
-    <h1>Hello!</h1>
-    <button type="button" class="transparent-overlay" aria-label="Click here"></button>
-</div>
-
-</body>
+    <!-- add a center div to have text with a css shader -->
+    <div class="shader-text" id="shader-text">
+      <h1>Hello!</h1>
+      <button
+        type="button"
+        class="transparent-overlay"
+        aria-label="Play"
+      ></button>
+    </div>
+  </body>
+</html>
