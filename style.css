@@ -128,3 +128,23 @@ body {
 .model-container canvas {
   display: block;
 }
+
+.top-right-corner {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+}
+
+.sponsor-background {
+  display: inline-block;
+  padding: 4px;
+  background-color: #0c0c0c;
+  border-radius: 6px;
+  line-height: 0;
+}
+
+.sponsor-background iframe {
+  display: block;
+  border: 0;
+}
